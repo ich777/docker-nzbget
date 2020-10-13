@@ -49,10 +49,10 @@ if [ -z "$CUR_V" ]; then
     fi
     mkdir ${DATA_DIR}/nzbget
     chmod +x ${DATA_DIR}/nzbget-v$LAT_V.run
-    ${DATA_DIR}/nzbget-v$LAT_V.run --destdir ${DATA_DIR}/nzbget
+    ${DATA_DIR}/nzbget-v$LAT_V.run --destdir ${DATA_DIR}/nzbget >/dev/null
     rm ${DATA_DIR}/nzbget-v$LAT_V.run
 elif [ "$CUR_V" != "$LAT_V" ]; then
-    echo "---Version missmatch, installed v$CUR_V, downloading and installing latest v$LAT_V...---"
+    echo "---Version missmatch, installed v$CUR_V, downloading and installing v$LAT_V...---"
     cd ${DATA_DIR}
     if [ "$NZBGET_V" == "prerelease" ]; then
         if wget -q -nc --show-progress --progress=bar:force:noscroll -O ${DATA_DIR}/nzbget-v$LAT_V.run "https://github.com/nzbget/nzbget/releases/download/v${LAT_V}/nzbget-${LAT_V%-*}-testing-${LAT_V##*-}-bin-linux.run" ; then
@@ -72,7 +72,7 @@ elif [ "$CUR_V" != "$LAT_V" ]; then
     rm -rf ${DATA_DIR}/nzbget
     mkdir ${DATA_DIR}/nzbget
     chmod +x ${DATA_DIR}/nzbget-v$LAT_V.run
-    ${DATA_DIR}/nzbget-v$LAT_V.run --destdir ${DATA_DIR}/nzbget
+    ${DATA_DIR}/nzbget-v$LAT_V.run --destdir ${DATA_DIR}/nzbget >/dev/null
     rm ${DATA_DIR}/nzbget-v$LAT_V.run
 elif [ "$CUR_V" == "$LAT_V" ]; then
     echo "---nzbget v$CUR_V up-to-date---"
