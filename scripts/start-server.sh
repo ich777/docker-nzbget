@@ -106,4 +106,4 @@ chmod -R ${DATA_PERM} ${DATA_DIR}
 
 echo "---Starting nzbget---"
 cd ${DATA_DIR}
-${DATA_DIR}/nzbget/nzbget --server --configfile ${DATA_DIR}/nzbget.conf --option OutputMode=Log  ${START_PARAMS}
+${DATA_DIR}/nzbget/nzbget --server --configfile ${DATA_DIR}/nzbget.conf --option OutputMode=Log ${START_PARAMS}
