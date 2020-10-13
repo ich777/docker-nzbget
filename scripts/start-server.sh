@@ -89,7 +89,6 @@ if [ ! -f ${DATA_DIR}/nzbget.conf ]; then
     sed -i '/LockFile=${MainDir}/c\LockFile=${AppDir}\/nzbget.lock' ${DATA_DIR}/nzbget.conf
     sed -i '/LogFile=${MainDir}/c\LogFile=/nzbget\/nzbget.log' ${DATA_DIR}/nzbget.conf
     sed -i '/ScriptDir=${AppDir}/c\ScriptDir=/nzbget\/scripts' ${DATA_DIR}/nzbget.conf
-    sed -i '/CertStore=${AppDir}/c\CertStore=/nzbget\/cacert.pem' ${DATA_DIR}/nzbget.conf
 fi
 if [ ! -d ${DATA_DIR}/scripts ]; then
     mkdir ${DATA_DIR}/scripts
