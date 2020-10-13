@@ -12,7 +12,7 @@ if [ ! -f ${DATA_DIR}/nzbget/nzbget ]; then
     CUR_V=""
 else
     cd ${DATA_DIR}
-    CUR_V="$(${DATA_DIR}/nzbget/nzbget --version | cut -d ':' -f2 | cut -d ' ' -f2)"
+    CUR_V="$(${DATA_DIR}/nzbget/nzbget --version | cut -d ':' -f2 | cut -d ' ' -f2 | sed -e 's/-testing//g')"
 fi
 
 if [ -z $LAT_V ]; then
