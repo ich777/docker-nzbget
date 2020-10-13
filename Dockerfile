@@ -5,6 +5,7 @@ LABEL maintainer="admin@minenet.at"
 ENV DATA_DIR="/nzbget"
 ENV NZBGET_V="latest"
 ENV START_PARAMS=""
+ENV DELETE_LOG_ON_START="true"
 ENV UMASK=0000
 ENV DATA_PERM=770
 ENV UID=99
