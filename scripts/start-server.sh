@@ -103,6 +103,16 @@ if [ "${DELETE_LOG_ON_START}" == "true" ]; then
 fi
 chmod -R ${DATA_PERM} ${DATA_DIR}
 
+echo "+-------------------------------------------------------------"
+echo "|"
+echo "| This container for ARM is deprecated and is no"
+echo "| longer actively maintained or further developed!"
+echo "|"
+echo "|  Container will start in 60 seconds!"
+echo "|"
+echo "+-------------------------------------------------------------"
+sleep 60
+
 echo "---Starting nzbget---"
 cd ${DATA_DIR}
 ${DATA_DIR}/nzbget/nzbget --server --configfile ${DATA_DIR}/nzbget.conf --option OutputMode=Log ${START_PARAMS}
