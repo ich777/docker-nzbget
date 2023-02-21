@@ -4,7 +4,7 @@ LABEL org.opencontainers.image.authors="admin@minenet.at"
 LABEL org.opencontainers.image.source="https://github.com/ich777/docker-nzbget"
 
 RUN apt-get update && \
-	apt-get -y install --no-install-recommends libstdc++6 libxml2 libncurses5 gnutls-bin openssl && \
+	apt-get -y install --no-install-recommends libstdc++6 libxml2 libncurses5 gnutls-bin openssl python3 && \
 	rm -rf /var/lib/apt/lists/*
 
 ENV DATA_DIR="/nzbget"
