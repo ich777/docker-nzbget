@@ -96,6 +96,8 @@ fi
 echo "---Preparing Server---"
 if [ ! -f ${DATA_DIR}/nzbget.conf ]; then
   cp ${DATA_DIR}/nzbget/nzbget.conf ${DATA_DIR}/nzbget.conf
+  sed -i "s|^UnrarCmd=.*|UnrarCmd=/usr/bin/unrar|" ${DATA_DIR}/nzbget.conf
+  sed -i "s|^SevenZipCmd=.*|SevenZipCmd=/usr/bin/7za|" ${DATA_DIR}/nzbget.conf
 fi
 
 chmod -R ${DATA_PERM} ${DATA_DIR}
