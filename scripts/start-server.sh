@@ -107,5 +107,5 @@ if [ ! -f "${DATA_DIR}/nzbget/nzbget" ]; then
   echo "Putting container into sleep mode!"
   sleep infinity
 else
-  exec ${DATA_DIR}/nzbget/nzbget --server --configfile ${DATA_DIR}/nzbget.conf -o OutputMode=log -o ControlUsername=${NZBGET_USERNAME} -o ControlPassword= ${START_PARAMS}
+  exec ${DATA_DIR}/nzbget/nzbget --server --configfile ${DATA_DIR}/nzbget.conf -o OutputMode=log -o ControlUsername=${NZBGET_USERNAME} -o ControlPassword=${NZBGET_PASSWORD} ${START_PARAMS}
 fi
